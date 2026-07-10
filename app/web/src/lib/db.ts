@@ -203,8 +203,11 @@ function forberedSkema(db: DB) {
  * try/catch, så opstart altid er sikker uanset eksisterende skema-version.
  */
 function koerMigrationer(db: DB) {
-  // Eksempel-mønster til fremtidige felt-tilføjelser:
-  // sikreKolonne(db, "bryggerier", "beskrivelse", "TEXT");
+  // Stripe-felter på tenant (platform-abonnement). Tilføjes idempotent, så
+  // eksisterende databaser opgraderes sikkert ved opstart.
+  sikreKolonne(db, "bryggerier", "stripe_customer_id", "TEXT");
+  sikreKolonne(db, "bryggerier", "stripe_subscription_id", "TEXT");
+  sikreKolonne(db, "bryggerier", "stripe_status", "TEXT");
 }
 
 /** Tilføj en kolonne hvis den ikke findes (SQLite mangler ADD COLUMN IF NOT EXISTS). */

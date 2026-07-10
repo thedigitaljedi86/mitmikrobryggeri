@@ -10,10 +10,11 @@ Bygget med **Next.js (App Router) + React + Tailwind + CSS-variabler + SQLite**,
   komponenterne).
 - **Backend-fundament**: SQLite-skema + idempotente migrationer, tier→feature-mapping,
   rolle→rettighed-mapping, hjemmerullet JWT-auth (to brugertyper), tenant-udledning,
-  per-tenant konfiguration med defaults i kode, samt eksempel-API'er.
+  per-tenant konfiguration med defaults i kode, subdomæne-middleware, begge Stripe-
+  integrationer (platform-abonnement + tenantens egen PSP), samt eksempel-API'er.
 
-Stripe-abonnementer, tenantens egen PSP, Resend-email og MitID-alderskontrol (§6, §8) er de
-næste byggeklodser og er endnu ikke koblet på; skærmene læser heller ikke live-data fra API'et endnu.
+Resend-email, MitID-alderskontrol (§8) og cron-jobs er de næste byggeklodser; live Stripe-
+nøgler er ikke sat (endpoints degraderer pænt), og skærmene læser endnu mock-data, ikke live-DB.
 
 ## Kom i gang
 
@@ -77,8 +78,30 @@ Følger mønstrene i `../../project/MicroSaas-template.md` og beslutningerne i `
 | `lib/auth.ts` | JWT via `jose` · scrypt-kodehash · host-only cookie · to brugertyper · admin-seed |
 | `lib/system/tenant.ts` | Tenant fra session (workspace) hhv. Host-header (kundeflade) · slug-generering |
 | `lib/system/indstillinger.ts` | Nøgle/værdi-config med **defaults i kode** (§4.5) |
+| `lib/stripe.ts` | **Platformens** abonnement (§6.1): checkout + webhook→tier |
+| `lib/system/kundeStripe.ts` | **Tenantens egen** PSP (§6.2): slutkunde-betaling + per-tenant webhook |
+| `middleware.ts` | Subdomæne → Host-header-routing (§4.1) — edge, ingen DB |
 | `lib/seed.ts` | Demo-data der spejler designet (Bryghuset Enghave m.fl.) |
-| `instrumentation.ts` | Opstarts-hook: DB-init, admin-seed, demo-seed |
+| `instrumentation.ts` (+ `-node`) | Opstarts-hook: DB-init, admin-seed, demo-seed |
+
+### Multi-tenancy (middleware)
+
+`{slug}.{ROOT_DOMAIN}` udpeger en tenant. `middleware.ts` (edge) rewriter internt:
+workspace/auth/API-stier (`/system`, `/login`, `/api`) passerer uændret (værktøjet virker
+også på subdomænet; tenant udledes af sessionen), mens alt andet rewrites til kundefladen
+`/bestil/{slug}`. På roddomænet sker ingen rewrite → det offentlige site.
+**Reverse-proxyen SKAL bevare Host-headeren** (sæt aldrig en Host-override — §7).
+
+### Betaling — to adskilte Stripe-integrationer (§4.4)
+
+1. **Platform** (`lib/stripe.ts`): platformens egen konto, én webhook der sætter
+   `bryggerier.tier`. Sådan tjener platformen penge.
+2. **Tenant** (`lib/system/kundeStripe.ts`): tenantens *egne* nøgler i config; slutkunde-
+   betalinger (MobilePay/kort via Stripe) går til tenantens konto. Webhooken er **per-tenant**
+   med id i URL'en, fordi secret'en skal vælges før signaturen kan valideres.
+
+Uden Stripe-nøgler svarer endpoints pænt: `503` (ikke konfigureret), `401/403` (auth),
+`400` (signatur/ugyldigt input) — så flowet kan udvikles uden live-nøgler.
 
 **Sikkerhedsgrænser** fra template §4.2/§7 er overholdt: tenant udledes af sessionen i
 workspacet (aldrig af URL), cookien er host-only, betaling og godkendelse er adskilte gates
@@ -94,6 +117,9 @@ workspacet (aldrig af URL), cookien er host-only, betaling og godkendelse er ads
 | `POST /api/auth/logout` | Ryd session |
 | `GET /api/auth/mig` | Whoami — verificér session, udled tenant, tier-features, rettigheder |
 | `POST /api/tilmeld` | Opret bryggeri (`afventer_godkendelse`) + ejer, log ind |
+| `POST /api/system/abonnement/checkout` | Start platform-abonnement-checkout (ejer, tier) |
+| `POST /api/payments/stripe/webhook` | Platform-webhook → sætter tier |
+| `POST /api/payments/stripe/webhook/[bryggeriId]` | Tenantens egen webhook → markér bestilling betalt |
 
 ## Struktur
 
