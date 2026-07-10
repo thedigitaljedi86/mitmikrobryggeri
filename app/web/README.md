@@ -3,19 +3,29 @@
 Pixel-perfekt implementering af designet fra `../../project/Mit Mikrobryggeri.dc.html`
 (Claude Design-eksport). Stilrent, minimalistisk, håndværker-varmt — dansk hele vejen.
 
-Bygget med **Next.js (App Router) + React + Tailwind + CSS-variabler**, jf. stakken i
-`../../project/CLAUDE.md`. Dette er første pass: **alle 16 skærme som trofaste, navigerbare
-UI'er med mock-data**. Auth, database, Stripe og MitID-alderskontrol er endnu ikke koblet på
-(se `CLAUDE.md` §2–§8 for den planlagte arkitektur).
+Bygget med **Next.js (App Router) + React + Tailwind + CSS-variabler + SQLite**, jf. stakken i
+`../../project/CLAUDE.md`.
+
+- **UI**: alle 16 skærme som trofaste, navigerbare skærme (i første omgang med mock-data i
+  komponenterne).
+- **Backend-fundament**: SQLite-skema + idempotente migrationer, tier→feature-mapping,
+  rolle→rettighed-mapping, hjemmerullet JWT-auth (to brugertyper), tenant-udledning,
+  per-tenant konfiguration med defaults i kode, samt eksempel-API'er.
+
+Stripe-abonnementer, tenantens egen PSP, Resend-email og MitID-alderskontrol (§6, §8) er de
+næste byggeklodser og er endnu ikke koblet på; skærmene læser heller ikke live-data fra API'et endnu.
 
 ## Kom i gang
 
 ```bash
+cp .env.example .env      # udfyld SESSION_SECRET, ADMIN_USERS m.m.
 npm install
-npm run dev      # http://localhost:3000
+npm run dev               # http://localhost:3000
 ```
 
-`npm run build && npm run start` for produktionsbygget.
+`npm run build && npm run start` for produktionsbygget. Ved opstart (se
+`src/instrumentation.ts`) forberedes DB'en, admins seedes fra `ADMIN_USERS`, og demo-data
+indlæses når `SEED_DEMO=1` (auto i udvikling). Demo-login: `anders@enghave.dk` / `bryg1234`.
 
 ## Skærme & ruter
 
@@ -55,16 +65,47 @@ Kilden til sandhed er `src/app/globals.css` (tokens + komponentklasser) spejlet 
   `.toggle`, `.segment`, `.form-input`, `.bjaelke`.
 - **Accent-varianter** (Tweaks): sæt `data-accent="humle"` eller `"dybblaa"` på et element.
 
+## Backend-fundament (`src/lib/`)
+
+Følger mønstrene i `../../project/MicroSaas-template.md` og beslutningerne i `CLAUDE.md`.
+
+| Fil | Ansvar |
+|---|---|
+| `lib/db.ts` | SQLite (better-sqlite3, WAL) · alle §5-tabeller · idempotente migrationer · in-memory under build |
+| `lib/tier.ts` | `Tier` → `Feature`-mapping (`harFeature`) — samme kilde for UI og API (§2) |
+| `lib/roller.ts` | Tenant-rolle → `Rettighed` (ejer/brygger/taproom, §3) |
+| `lib/auth.ts` | JWT via `jose` · scrypt-kodehash · host-only cookie · to brugertyper · admin-seed |
+| `lib/system/tenant.ts` | Tenant fra session (workspace) hhv. Host-header (kundeflade) · slug-generering |
+| `lib/system/indstillinger.ts` | Nøgle/værdi-config med **defaults i kode** (§4.5) |
+| `lib/seed.ts` | Demo-data der spejler designet (Bryghuset Enghave m.fl.) |
+| `instrumentation.ts` | Opstarts-hook: DB-init, admin-seed, demo-seed |
+
+**Sikkerhedsgrænser** fra template §4.2/§7 er overholdt: tenant udledes af sessionen i
+workspacet (aldrig af URL), cookien er host-only, betaling og godkendelse er adskilte gates
+(tilmelding låser workspacet, admin-godkendelse gater kun kort-synlighed).
+
+### Eksempel-API'er
+
+| Rute | Formål |
+|---|---|
+| `GET /api/health` | DB-tjek |
+| `GET /api/directory` | Offentlig liste over **godkendte** bryggerier (kort/liste) |
+| `POST /api/auth/login` | Login (`{email, kode, konto?}`) → host-only session-cookie |
+| `POST /api/auth/logout` | Ryd session |
+| `GET /api/auth/mig` | Whoami — verificér session, udled tenant, tier-features, rettigheder |
+| `POST /api/tilmeld` | Opret bryggeri (`afventer_godkendelse`) + ejer, log ind |
+
 ## Struktur
 
 ```
 src/
-├── app/                       # Next.js App Router — ruter + globals.css
+├── app/                       # Next.js App Router — ruter + globals.css + api/
 ├── components/
 │   ├── PhoneFrame.tsx         # iOS-enhedsramme (port af ../../project/ios-frame.jsx)
 │   ├── PhoneRoute.tsx         # centrerer én skærm på lærredet
 │   ├── ui.tsx, rows.tsx       # delte primitiver (Screen, BottomNav, Toggle, rækker)
 │   └── screens/               # de 16 skærme
-├── lib/nav.ts                 # bundnavigation pr. flade
+├── lib/                       # backend-fundament (db, tier, roller, auth, system/)
+├── instrumentation.ts         # opstarts-hook (DB-init, seeding)
 design-system/tokens.css       # token-spejl
 ```

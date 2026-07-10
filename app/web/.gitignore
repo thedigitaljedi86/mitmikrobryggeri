@@ -2,6 +2,7 @@
 /.next
 /out
 /build
+/data
 next-env.d.ts
 *.tsbuildinfo
 .env*
