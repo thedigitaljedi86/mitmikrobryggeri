@@ -1,0 +1,163 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "ui_kits/talvaerkstedet-app/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Baloo 2|Nunito))/i]",
+        "message": "Font not provided by the design system. Available: Baloo 2, Nunito."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--bg",
+      "--blue",
+      "--blue-dark",
+      "--border",
+      "--bp-mobile",
+      "--card-bg",
+      "--color-accent",
+      "--color-active",
+      "--color-primary",
+      "--color-primary-dark",
+      "--color-star",
+      "--color-success",
+      "--color-success-dark",
+      "--color-tryagain",
+      "--color-warning",
+      "--color-wrong",
+      "--container",
+      "--container-pad",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease",
+      "--ease-bounce",
+      "--font-base",
+      "--font-display",
+      "--green",
+      "--green-dark",
+      "--orange",
+      "--pink",
+      "--purple",
+      "--pv-hundreds",
+      "--pv-ones",
+      "--pv-tens",
+      "--pv-thousands",
+      "--radius",
+      "--radius-pill",
+      "--radius-sm",
+      "--red",
+      "--shadow",
+      "--shadow-sm",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--text",
+      "--text-light",
+      "--yellow"
+    ],
+    "tokenKinds": {
+      "--font-base": "font",
+      "--font-display": "font",
+      "--blue": "color",
+      "--blue-dark": "color",
+      "--green": "color",
+      "--green-dark": "color",
+      "--yellow": "color",
+      "--orange": "color",
+      "--pink": "color",
+      "--purple": "color",
+      "--red": "color",
+      "--bg": "color",
+      "--card-bg": "color",
+      "--text": "font",
+      "--text-light": "font",
+      "--border": "color",
+      "--color-primary": "color",
+      "--color-primary-dark": "color",
+      "--color-success": "color",
+      "--color-success-dark": "color",
+      "--color-star": "color",
+      "--color-tryagain": "color",
+      "--color-wrong": "color",
+      "--color-active": "color",
+      "--color-accent": "color",
+      "--color-warning": "color",
+      "--pv-thousands": "color",
+      "--pv-hundreds": "color",
+      "--pv-tens": "color",
+      "--pv-ones": "color",
+      "--shadow": "shadow",
+      "--shadow-sm": "shadow",
+      "--radius": "radius",
+      "--radius-sm": "radius",
+      "--radius-pill": "radius",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--container": "spacing",
+      "--container-pad": "spacing",
+      "--bp-mobile": "spacing",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other",
+      "--ease": "other",
+      "--ease-bounce": "other"
+    },
+    "fontFamilies": [
+      "Baloo 2",
+      "Nunito"
+    ]
+  }
+}

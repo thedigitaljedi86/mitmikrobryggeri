@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..600;1,400&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; background: #EFE9DE; }
+    a { color: #A85B1F; text-decoration: none; }
+    a:hover { color: #7E4416; text-decoration: underline; }
+  </style>
+</helmet>
+
+<section style="padding: 64px 72px 0 72px; --accent: {{ accent }};">
+  <div id="3a" style="display: flex; flex-direction: column; gap: 40px;">
+
+    <div style="display: flex; align-items: baseline; gap: 18px;">
+      <a href="#3a" style="font: 600 13px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; background: #211B12; color: #FBF7F0; padding: 7px 11px; border-radius: 999px;">3A</a>
+      <div style="font: 400 44px/1.25 'Lora', serif; color: #211B12;">Danmarkskortet &amp; planer</div>
+      <div style="font: 400 16px/1.4 'Instrument Sans', sans-serif; color: #8B8070;">Åbent kort for alle · bryggerier tilmelder sig eller opgraderer</div>
+    </div>
+
+    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+
+      <!-- ── 13 · Kortet ── -->
+      <div data-screen-label="Danmarkskort" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">13 · Kortet · offentligt</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 66px;">
+            <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: baseline; gap: 10px;">
+                <span style="font: 400 28px/1.2 'Lora', serif;">Bryggerikortet</span>
+                <span style="margin-left: auto; font-size: 13px; color: #8B8070;">214 bryggerier</span>
+              </div>
+              <div style="height: 46px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 999px; display: flex; align-items: center; padding: 0 18px; font-size: 15px; color: #8B8070;">Søg bryggeri eller by</div>
+            </div>
+
+            <div style="position: relative; flex: 1; margin: 14px 0 0 0; background: #E8EDE6; overflow: hidden;">
+              <svg width="100%" height="100%" viewBox="0 0 402 520" preserveAspectRatio="xMidYMid slice" style="display: block; position: absolute; inset: 0;">
+                <path d="M118,28 C96,52 104,96 88,128 C72,160 52,198 58,244 C64,292 84,336 114,368 C138,394 172,400 186,378 C196,362 182,334 184,306 C186,276 204,256 197,222 C190,190 172,174 174,142 C176,104 158,60 146,32 C138,12 128,12 118,28 Z" fill="#F7F2E6" stroke="#D6CCB8" stroke-width="1.5"></path>
+                <ellipse cx="232" cy="392" rx="40" ry="32" fill="#F7F2E6" stroke="#D6CCB8" stroke-width="1.5"></ellipse>
+                <path d="M300,340 C294,312 316,290 344,294 C374,298 394,318 390,350 C386,382 360,404 332,398 C306,393 305,366 300,340 Z" fill="#F7F2E6" stroke="#D6CCB8" stroke-width="1.5"></path>
+                <circle cx="386" cy="470" r="10" fill="#F7F2E6" stroke="#D6CCB8" stroke-width="1.5"></circle>
+                <circle cx="120" cy="120" r="13" fill="#211B12"></circle>
+                <text x="120" y="125" text-anchor="middle" fill="#FBF7F0" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="700">6</text>
+                <circle cx="96" cy="250" r="13" fill="#211B12"></circle>
+                <text x="96" y="255" text-anchor="middle" fill="#FBF7F0" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="700">4</text>
+                <circle cx="150" cy="330" r="7" fill="#A85B1F" stroke="#FBF7F0" stroke-width="2.5"></circle>
+                <circle cx="232" cy="388" r="7" fill="#A85B1F" stroke="#FBF7F0" stroke-width="2.5"></circle>
+                <circle cx="330" cy="322" r="13" fill="#211B12"></circle>
+                <text x="330" y="327" text-anchor="middle" fill="#FBF7F0" font-family="Instrument Sans, sans-serif" font-size="12" font-weight="700">9</text>
+                <circle cx="356" cy="366" r="11" fill="#A85B1F" stroke="#FBF7F0" stroke-width="3"></circle>
+              </svg>
+
+              <div style="position: absolute; left: 20px; right: 20px; bottom: 18px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; box-shadow: 0 8px 24px rgba(33,27,18,0.10); display: flex; gap: 14px; align-items: center;">
+                <div style="width: 44px; height: 44px; border-radius: 14px; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 400 18px/1 'Lora', serif; flex-shrink: 0;">BE</div>
+                <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                  <span style="font: 400 19px/1.35 'Lora', serif;">Bryghuset Enghave</span>
+                  <span style="font-size: 13px; color: #8B8070;">1,2 km · <span style="color: #4A6741; font-weight: 600;">Åbent</span> · 3 øl på hanen</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070; flex-shrink: 0;">→</span>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+              <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">KORT</span></div>
+              <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">LISTE</span></div>
+              <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">EVENTS</span></div>
+              <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">PROFIL</span></div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 14 · Bryggeri-profil (offentlig) ── -->
+      <div data-screen-label="Offentlig bryggeriprofil" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">14 · Bryggeri-profil · offentlig</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">← Kortet</div>
+              <div style="font: 400 34px/1.3 'Lora', serif;">Bryghuset Enghave</div>
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #4A6741;"></span>
+                <span style="color: #4A6741; font-weight: 600;">Åbent til 22</span>
+                <span style="color: #8B8070;">· Enghavevej 41, Kbh SV · 1,2 km</span>
+              </div>
+            </div>
+
+            <div style="margin: 18px 24px 0 24px; display: flex; gap: 10px;">
+              <div style="flex: 1; height: 52px; border-radius: 14px; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">Bestil øl</div>
+              <div style="flex: 1; height: 52px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E7DFD0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">Rutevejledning</div>
+            </div>
+
+            <div style="margin: 22px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">PÅ HANEN LIGE NU</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: #D08C2E; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-size: 15px; font-weight: 600;">Enghave IPA</span>
+                  <span style="font-size: 13px; color: #8B8070;">West coast IPA · 6,2 %</span>
+                </div>
+                <span style="margin-left: auto; font-size: 14px; font-weight: 600;">44 kr</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: #2E2013; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-size: 15px; font-weight: 600;">Havre Stout</span>
+                  <span style="font-size: 13px; color: #8B8070;">Oatmeal stout · 5,4 %</span>
+                </div>
+                <span style="margin-left: auto; font-size: 14px; font-weight: 600;">46 kr</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: #B4622D; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-size: 15px; font-weight: 600;">Rød Ale</span>
+                  <span style="font-size: 13px; color: #8B8070;">Irish red · 5,0 %</span>
+                </div>
+                <span style="margin-left: auto; font-size: 14px; font-weight: 600;">42 kr</span>
+              </div>
+            </div>
+
+            <div style="margin: 22px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">ÅBNINGSTIDER</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; min-height: 46px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Tor–fre</span><span style="margin-left: auto; font-size: 15px; font-weight: 600;">16–22</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 46px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Lørdag</span><span style="margin-left: auto; font-size: 15px; font-weight: 600;">12–22</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 46px;">
+                <span style="font-size: 15px; color: #8B8070;">Søn–ons</span><span style="margin-left: auto; font-size: 15px; color: #8B8070;">Lukket</span>
+              </div>
+            </div>
+
+            <div style="margin: 16px 24px 0 24px; background: #211B12; color: #FBF7F0; border-radius: 18px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="font: 400 19px/1.35 'Lora', serif;">Fredagsbar · smagning af Havre Stout</div>
+              <div style="display: flex; align-items: baseline; gap: 10px;">
+                <span style="font-size: 13px; color: #B8AE9D;">Fredag 11. juli · 16–22 · gratis</span>
+                <span style="margin-left: auto; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #211B12; background: #E8C36A; border-radius: 999px; padding: 8px 14px;">TILMELD</span>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 15 · Planer ── -->
+      <div data-screen-label="Planer og tilmelding" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">15 · Planer · for bryggerier</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: var(--accent, #A85B1F);">FOR BRYGGERIER</div>
+              <div style="font: 400 34px/1.3 'Lora', serif;">Kom på kortet</div>
+              <div style="font-size: 15px; color: #8B8070; line-height: 1.45;">Bliv vist gratis — eller få hele værkstedet til bestillinger, lager og brygninger.</div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; display: flex; flex-direction: column; gap: 12px;">
+
+              <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; align-items: baseline;">
+                  <span style="font: 400 22px/1.35 'Lora', serif;">På kortet</span>
+                  <span style="margin-left: auto; font: 400 22px/1 'Lora', serif;">Gratis</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #5C5343;">
+                  <span>· Profil på danmarkskortet</span>
+                  <span>· Åbningstider &amp; øl på hanen</span>
+                  <span>· Events vises for gæster</span>
+                </div>
+                <div style="height: 46px; border-radius: 12px; background: #FFFFFF; border: 1px solid #211B12; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'Instrument Sans', sans-serif;">Tilmeld gratis</div>
+              </div>
+
+              <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; align-items: baseline;">
+                  <span style="font: 400 22px/1.35 'Lora', serif;">Starter</span>
+                  <span style="margin-left: auto; font: 400 22px/1 'Lora', serif;">149 kr<span style="font: 400 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">/md</span></span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #5C5343;">
+                  <span>· Alt i Gratis</span>
+                  <span>· Webshop &amp; online bestillinger</span>
+                  <span>· Klik &amp; hent · salgsoverblik</span>
+                </div>
+                <div style="height: 46px; border-radius: 12px; background: #FFFFFF; border: 1px solid #211B12; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'Instrument Sans', sans-serif;">Vælg Starter</div>
+              </div>
+
+              <div style="position: relative; background: #211B12; color: #FBF7F0; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+                <span style="position: absolute; top: -10px; right: 18px; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #211B12; background: #E8C36A; border-radius: 999px; padding: 6px 12px;">FLEST VÆLGER</span>
+                <div style="display: flex; align-items: baseline;">
+                  <span style="font: 400 22px/1.35 'Lora', serif;">Pro</span>
+                  <span style="margin-left: auto; font: 400 22px/1 'Lora', serif; color: #E8C36A;">349 kr<span style="font: 400 13px/1 'Instrument Sans', sans-serif; color: #B8AE9D;">/md</span></span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #B8AE9D;">
+                  <span>· Alt i Starter</span>
+                  <span>· Lager, brygninger &amp; gæringslog</span>
+                  <span>· Fuld statistik &amp; flere brugere</span>
+                </div>
+                <div style="height: 46px; border-radius: 12px; background: #E8C36A; color: #211B12; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'Instrument Sans', sans-serif;">Vælg Pro</div>
+              </div>
+
+            </div>
+
+            <div style="margin: 14px 24px 0 24px; font-size: 13px; color: #8B8070; text-align: center;">Ingen binding · skift eller opsig når som helst</div>
+          </div>
+        </x-import>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding: 64px 72px 0 72px; --accent: {{ accent }};">
+  <div id="2a" style="display: flex; flex-direction: column; gap: 40px;">
+
+    <div style="display: flex; align-items: baseline; gap: 18px;">
+      <a href="#2a" style="font: 600 13px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; background: #211B12; color: #FBF7F0; padding: 7px 11px; border-radius: 999px;">2A</a>
+      <div style="font: 400 44px/1.25 'Lora', serif; color: #211B12;">Tenants, indstillinger &amp; statistik</div>
+      <div style="font: 400 16px/1.4 'Instrument Sans', sans-serif; color: #8B8070;">Administration af bryggerier på platformen</div>
+    </div>
+
+    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+
+      <!-- ── 07 · Mine bryggerier (tenants) ── -->
+      <div data-screen-label="Mine bryggerier" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">07 · Mine bryggerier</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 4px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: var(--accent, #A85B1F);">KONTO · ANDERS HOLM</div>
+              <div style="font: 400 34px/1.3 'Lora', serif;">Mine bryggerier</div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="background: #FFFFFF; border: 1.5px solid var(--accent, #A85B1F); border-radius: 18px; padding: 18px 20px; display: flex; gap: 16px; align-items: center;">
+                <div style="width: 46px; height: 46px; border-radius: 14px; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 400 20px/1 'Lora', serif; flex-shrink: 0;">BE</div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                  <span style="font: 400 21px/1.35 'Lora', serif;">Bryghuset Enghave</span>
+                  <span style="font-size: 13px; color: #8B8070;">Ejer · København SV · 3 brugere</span>
+                </div>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F); flex-shrink: 0;">AKTIV</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; gap: 16px; align-items: center;">
+                <div style="width: 46px; height: 46px; border-radius: 14px; background: #4A6741; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 400 20px/1 'Lora', serif; flex-shrink: 0;">VB</div>
+                <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                  <span style="font: 400 21px/1.35 'Lora', serif;">Vesterbro Bryglaug</span>
+                  <span style="font-size: 13px; color: #8B8070;">Brygger · København V · 5 brugere</span>
+                </div>
+                <span style="margin-left: auto; font-size: 13px; color: #8B8070; flex-shrink: 0;">Skift til</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px dashed #C9BFAD; border-radius: 18px; min-height: 56px; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'Instrument Sans', sans-serif; color: #8B8070;">+ Opret nyt bryggeri</div>
+            </div>
+
+            <div style="margin: 26px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">BRUGERE · BRYGHUSET ENGHAVE</div>
+            <div style="margin: 12px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Anders Holm</span>
+                  <span style="font-size: 13px; color: #8B8070;">anders@enghave.dk</span>
+                </div>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #FBF7F0; background: #211B12; border-radius: 999px; padding: 5px 10px;">EJER</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Sofie Lund</span>
+                  <span style="font-size: 13px; color: #8B8070;">sofie@enghave.dk</span>
+                </div>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #211B12; border: 1px solid #E7DFD0; border-radius: 999px; padding: 5px 10px;">BRYGGER</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Mikkel Rask</span>
+                  <span style="font-size: 13px; color: #8B8070;">mikkel@enghave.dk</span>
+                </div>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #211B12; border: 1px solid #E7DFD0; border-radius: 999px; padding: 5px 10px;">TAPROOM</span>
+              </div>
+            </div>
+
+            <div style="margin: 14px 24px 0 24px; height: 52px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E7DFD0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">Invitér bruger</div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 08 · Indstillinger (oversigt) ── -->
+      <div data-screen-label="Indstillinger oversigt" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">08 · Indstillinger</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 4px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: var(--accent, #A85B1F);">BRYGHUSET ENGHAVE</div>
+              <div style="font: 400 34px/1.3 'Lora', serif;">Indstillinger</div>
+            </div>
+
+            <div style="margin: 22px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 62px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Bryggeri</span>
+                  <span style="font-size: 13px; color: #8B8070;">Profil, adresse, åbningstider, tanke</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 62px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Lager</span>
+                  <span style="font-size: 13px; color: #8B8070;">Minimumsgrænser, enheder, leverandører</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 62px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Online salg</span>
+                  <span style="font-size: 13px; color: #8B8070;">Webshop, betaling, afhentning, levering</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 62px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Brugere &amp; roller</span>
+                  <span style="font-size: 13px; color: #8B8070;">3 brugere · ejer, brygger, taproom</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 62px;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Abonnement</span>
+                  <span style="font-size: 13px; color: #8B8070;">Håndværker-plan · 349 kr/md</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+            </div>
+
+            <div style="margin: 22px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">NOTIFIKATIONER</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 56px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Påmindelse om daglig måling</span>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 56px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Advarsel ved lavt lager</span>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 56px;">
+                <span style="font-size: 15px;">Ny online bestilling</span>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: #E7DFD0; display: flex; align-items: center; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF;"></div></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 09 · Bryggeri-indstillinger ── -->
+      <div data-screen-label="Bryggeri indstillinger" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">09 · Bryggeri</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">← Indstillinger</div>
+              <div style="font: 400 34px/1.3 'Lora', serif;">Bryggeri</div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">PROFIL</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 12px; color: #8B8070; letter-spacing: 1px; font-weight: 600;">NAVN</span>
+                <span style="font-size: 15px; font-weight: 600;">Bryghuset Enghave</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 12px; color: #8B8070; letter-spacing: 1px; font-weight: 600;">ADRESSE</span>
+                <span style="font-size: 15px;">Enghavevej 41, 2450 København SV</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 0;">
+                <span style="font-size: 12px; color: #8B8070; letter-spacing: 1px; font-weight: 600;">CVR</span>
+                <span style="font-size: 15px;">41 88 23 07</span>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">ÅBNINGSTIDER · TAPROOM</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Torsdag</span><span style="margin-left: auto; font-size: 15px; font-weight: 600;">16–21</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Fredag</span><span style="margin-left: auto; font-size: 15px; font-weight: 600;">14–22</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Lørdag</span><span style="margin-left: auto; font-size: 15px; font-weight: 600;">12–22</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 48px;">
+                <span style="font-size: 15px; color: #8B8070;">Søn–ons</span><span style="margin-left: auto; font-size: 15px; color: #8B8070;">Lukket</span>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">TANKE &amp; KAPACITET</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px; font-weight: 600;">Tank 1</span><span style="font-size: 13px; color: #8B8070;">500 L · gæringstank</span>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741; border: 1px solid #4A6741; border-radius: 999px; padding: 5px 10px;">LEDIG</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px; font-weight: 600;">Tank 2</span><span style="font-size: 13px; color: #8B8070;">500 L · gæringstank</span>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F); border: 1px solid var(--accent, #A85B1F); border-radius: 999px; padding: 5px 10px;">I BRUG</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px;">
+                <span style="font-size: 15px; font-weight: 600;">Tank 3</span><span style="font-size: 13px; color: #8B8070;">1.000 L · lagertank</span>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F); border: 1px solid var(--accent, #A85B1F); border-radius: 999px; padding: 5px 10px;">I BRUG</span>
+              </div>
+            </div>
+
+            <div style="margin: 14px 24px 0 24px; height: 52px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E7DFD0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">+ Tilføj tank</div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 10 · Lager-indstillinger ── -->
+      <div data-screen-label="Lager indstillinger" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">10 · Lager</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">← Indstillinger</div>
+              <div style="font: 400 34px/1.3 'Lora', serif;">Lager</div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Advarsel ved lavt lager</span>
+                  <span style="font-size: 13px; color: #8B8070;">Notifikation når en vare når minimum</span>
+                </div>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Automatisk indkøbsliste</span>
+                  <span style="font-size: 13px; color: #8B8070;">Varer under minimum tilføjes selv</span>
+                </div>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Træk fra lager ved brygstart</span>
+                  <span style="font-size: 13px; color: #8B8070;">Opskriftens råvarer trækkes automatisk</span>
+                </div>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: #E7DFD0; display: flex; align-items: center; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF;"></div></div>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">MINIMUMSGRÆNSER</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Pilsnermalt</span>
+                <span style="margin-left: auto; font-size: 15px; font-weight: 600;">min. 40 kg</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Münchenermalt</span>
+                <span style="margin-left: auto; font-size: 15px; font-weight: 600;">min. 25 kg</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Citra-humle</span>
+                <span style="margin-left: auto; font-size: 15px; font-weight: 600;">min. 1,0 kg</span>
+              </div>
+              <div style="display: flex; align-items: center; min-height: 52px;">
+                <span style="font-size: 15px;">US-05 gær</span>
+                <span style="margin-left: auto; font-size: 15px; font-weight: 600;">min. 6 breve</span>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">FASTE LEVERANDØRER</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 54px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-size: 15px; font-weight: 600;">Dansk Maltcentral</span>
+                  <span style="font-size: 13px; color: #8B8070;">Malt · levering 2–3 dage</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 54px;">
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-size: 15px; font-weight: 600;">Humlegården ApS</span>
+                  <span style="font-size: 13px; color: #8B8070;">Humle &amp; gær · levering 1–2 dage</span>
+                </div>
+                <span style="margin-left: auto; color: #8B8070;">→</span>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 11 · Online salg ── -->
+      <div data-screen-label="Online salg indstillinger" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">11 · Online salg</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">← Indstillinger</div>
+              <div style="display: flex; align-items: baseline;">
+                <span style="font: 400 34px/1.3 'Lora', serif;">Online salg</span>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741; border: 1px solid #4A6741; border-radius: 999px; padding: 5px 10px;">WEBSHOP ÅBEN</span>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Webshop aktiv</span>
+                  <span style="font-size: 13px; color: #8B8070;">enghave.mitbryggeri.dk</span>
+                </div>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Klik &amp; hent</span>
+                  <span style="font-size: 13px; color: #8B8070;">Afhentning i taproomets åbningstid</span>
+                </div>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; min-height: 58px;">
+                <div style="display: flex; flex-direction: column; gap: 3px;">
+                  <span style="font-size: 15px; font-weight: 600;">Levering</span>
+                  <span style="font-size: 13px; color: #8B8070;">Kun erhverv · min. 2 fustager</span>
+                </div>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: #E7DFD0; display: flex; align-items: center; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF;"></div></div>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">BETALING</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px; font-weight: 600;">MobilePay</span>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741;">TILSLUTTET</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px; font-weight: 600;">Kort (Visa/Mastercard)</span>
+                <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741;">TILSLUTTET</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px;">
+                <span style="font-size: 15px; font-weight: 600;">Faktura (erhverv)</span>
+                <span style="margin-left: auto; font-size: 13px; color: #8B8070;">Tilslut →</span>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">SORTIMENT I WEBSHOPPEN</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Enghave IPA · 44 kr</span>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                <span style="font-size: 15px;">Havre Stout · 46 kr</span>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: var(--accent, #A85B1F); display: flex; align-items: center; justify-content: flex-end; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FBF7F0;"></div></div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 52px;">
+                <span style="font-size: 15px; color: #8B8070;">Rød Ale · udsolgt</span>
+                <div style="margin-left: auto; width: 46px; height: 28px; border-radius: 999px; background: #E7DFD0; display: flex; align-items: center; padding: 0 3px; box-sizing: border-box; flex-shrink: 0;"><div style="width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF;"></div></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+      <!-- ── 12 · Statistik ── -->
+      <div data-screen-label="Statistik" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">12 · Statistik · salg</div>
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+          <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+            <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 4px;">
+              <div style="font: 400 34px/1.3 'Lora', serif;">Statistik</div>
+            </div>
+
+            <div style="margin: 16px 24px 0 24px; display: flex; background: #F0EADF; border-radius: 999px; padding: 4px;">
+              <div style="flex: 1; height: 36px; display: flex; align-items: center; justify-content: center; font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">Uge</div>
+              <div style="flex: 1; height: 36px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 4px rgba(33,27,18,0.08); display: flex; align-items: center; justify-content: center; font: 600 13px/1 'Instrument Sans', sans-serif;">Måned</div>
+              <div style="flex: 1; height: 36px; display: flex; align-items: center; justify-content: center; font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">År</div>
+            </div>
+
+            <div style="margin: 16px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 20px;">
+              <div style="display: flex; align-items: baseline; gap: 10px;">
+                <span style="font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">OMSÆTNING · JULI</span>
+                <span style="margin-left: auto; font: 400 26px/1 'Lora', serif; color: var(--accent, #A85B1F);">48.320 kr</span>
+              </div>
+              <div style="display: flex; gap: 16px; margin-top: 4px; font-size: 13px; color: #4A6741;"><span>+12 % vs. juni</span></div>
+              <div style="display: flex; align-items: flex-end; gap: 8px; height: 110px; margin-top: 16px;">
+                <div style="flex: 1; height: 42%; border-radius: 6px 6px 0 0; background: #E7DFD0;"></div>
+                <div style="flex: 1; height: 58%; border-radius: 6px 6px 0 0; background: #E7DFD0;"></div>
+                <div style="flex: 1; height: 50%; border-radius: 6px 6px 0 0; background: #E7DFD0;"></div>
+                <div style="flex: 1; height: 66%; border-radius: 6px 6px 0 0; background: #E7DFD0;"></div>
+                <div style="flex: 1; height: 74%; border-radius: 6px 6px 0 0; background: var(--accent, #A85B1F);"></div>
+                <div style="flex: 1; height: 92%; border-radius: 6px 6px 0 0; background: var(--accent, #A85B1F);"></div>
+                <div style="flex: 1; height: 30%; border-radius: 6px 6px 0 0; background: #F0EADF; border: 1px dashed #C9BFAD; box-sizing: border-box;"></div>
+              </div>
+              <div style="display: flex; gap: 8px; margin-top: 8px; font-size: 11px; color: #8B8070;">
+                <span style="flex: 1; text-align: center;">Jan</span><span style="flex: 1; text-align: center;">Feb</span><span style="flex: 1; text-align: center;">Mar</span><span style="flex: 1; text-align: center;">Apr</span><span style="flex: 1; text-align: center;">Maj</span><span style="flex: 1; text-align: center;">Jun</span><span style="flex: 1; text-align: center;">Jul</span>
+              </div>
+            </div>
+
+            <div style="margin: 14px 24px 0 24px; display: flex; gap: 10px;">
+              <div style="flex: 1; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px;">
+                <span style="font-size: 12px; color: #8B8070; letter-spacing: 1px; font-weight: 600;">TAPROOM</span>
+                <span style="font: 400 22px/1 'Lora', serif;">61 %</span>
+              </div>
+              <div style="flex: 1; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px;">
+                <span style="font-size: 12px; color: #8B8070; letter-spacing: 1px; font-weight: 600;">WEBSHOP</span>
+                <span style="font: 400 22px/1 'Lora', serif;">27 %</span>
+              </div>
+              <div style="flex: 1; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px;">
+                <span style="font-size: 12px; color: #8B8070; letter-spacing: 1px; font-weight: 600;">ERHVERV</span>
+                <span style="font: 400 22px/1 'Lora', serif;">12 %</span>
+              </div>
+            </div>
+
+            <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">MEST SOLGTE</div>
+            <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; align-items: baseline;"><span style="font-size: 15px; font-weight: 600;">Enghave IPA</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">412 stk · 18.130 kr</span></div>
+                <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 100%; height: 4px; border-radius: 999px; background: var(--accent, #A85B1F);"></div></div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                <div style="display: flex; align-items: baseline;"><span style="font-size: 15px; font-weight: 600;">Havre Stout</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">296 stk · 13.620 kr</span></div>
+                <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 72%; height: 4px; border-radius: 999px; background: var(--accent, #A85B1F);"></div></div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0;">
+                <div style="display: flex; align-items: baseline;"><span style="font-size: 15px; font-weight: 600;">Rød Ale</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">188 stk · 7.900 kr</span></div>
+                <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 44%; height: 4px; border-radius: 999px; background: var(--accent, #A85B1F);"></div></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding: 64px 72px 96px 72px; --accent: {{ accent }};">
+  <div id="1a" style="display: flex; flex-direction: column; gap: 40px;">
+
+    <div style="display: flex; align-items: baseline; gap: 18px;">
+      <a href="#1a" style="font: 600 13px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; background: #211B12; color: #FBF7F0; padding: 7px 11px; border-radius: 999px;">1A</a>
+      <div style="font: 400 44px/1.25 'Lora', serif; color: #211B12;">Mit Mikrobryggeri</div>
+      <div style="font: 400 16px/1.4 'Instrument Sans', sans-serif; color: #8B8070;">Stilren håndværksretning · mobil · dansk</div>
+    </div>
+
+    <div style="display: flex; gap: 56px; align-items: flex-start; flex-wrap: wrap;">
+
+      <!-- ══════════════ BRYGGERENS APP ══════════════ -->
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2.4px; color: #8B8070;">BRYGGERENS APP</div>
+        <div style="display: flex; gap: 40px; align-items: flex-start;">
+
+          <!-- ── Skærm 1 · Hjem ── -->
+          <div data-screen-label="Hjem" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">01 · Hjem</div>
+            <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+              <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+                <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 4px;">
+                  <div style="font: 500 13px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: var(--accent, #A85B1F);">GODMORGEN, ANDERS</div>
+                  <div style="font: 400 34px/1.3 'Lora', serif;">Bryghuset Enghave</div>
+                </div>
+
+                <div style="margin: 22px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 6px 20px;">
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 54px; border-bottom: 1px solid #F0EADF;">
+                    <span style="font: 400 26px/1 'Lora', serif; color: var(--accent, #A85B1F); min-width: 28px;">2</span>
+                    <span style="font-size: 15px;">batches i gæring</span>
+                    <span style="margin-left: auto; font-size: 13px; color: #8B8070;">Se alle</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 54px; border-top: 1px solid #F0EADF; border-bottom: 1px solid #F0EADF;">
+                    <span style="font: 400 26px/1 'Lora', serif; color: var(--accent, #A85B1F); min-width: 28px;">3</span>
+                    <span style="font-size: 15px;">nye bestillinger i dag</span>
+                    <span style="margin-left: auto; font-size: 13px; color: #8B8070;">Salg</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 54px;">
+                    <span style="font: 400 26px/1 'Lora', serif; color: #C98A2C; min-width: 28px;">1</span>
+                    <span style="font-size: 15px;">måling mangler på nr. 24</span>
+                    <span style="margin-left: auto; font-size: 13px; color: #8B8070;">Log</span>
+                  </div>
+                </div>
+
+                <div style="margin: 26px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">AKTIVE BRYG</div>
+
+                <div style="margin: 12px 24px 0 24px; display: flex; flex-direction: column; gap: 10px;">
+                  <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;">
+                      <span style="font: 400 22px/1 'Lora', serif;">Nr. 24 · Enghave IPA</span>
+                      <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F); border: 1px solid var(--accent, #A85B1F); border-radius: 999px; padding: 5px 10px; white-space: nowrap; flex-shrink: 0;">GÆRING · DAG 5</span>
+                    </div>
+                    <div style="height: 5px; border-radius: 999px; background: #F0EADF;"><div style="width: 38%; height: 5px; border-radius: 999px; background: var(--accent, #A85B1F);"></div></div>
+                    <div style="display: flex; gap: 18px; font-size: 13px; color: #8B8070;"><span>SG 1,018</span><span>19,5 °C</span><span style="margin-left: auto;">Klar ca. 24. jul</span></div>
+                  </div>
+                  <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;">
+                      <span style="font: 400 22px/1 'Lora', serif;">Nr. 23 · Havre Stout</span>
+                      <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741; border: 1px solid #4A6741; border-radius: 999px; padding: 5px 10px; white-space: nowrap; flex-shrink: 0;">LAGRING · DAG 12</span>
+                    </div>
+                    <div style="height: 5px; border-radius: 999px; background: #F0EADF;"><div style="width: 74%; height: 5px; border-radius: 999px; background: #4A6741;"></div></div>
+                    <div style="display: flex; gap: 18px; font-size: 13px; color: #8B8070;"><span>FG 1,012</span><span>4 °C</span><span style="margin-left: auto;">Klar ca. 16. jul</span></div>
+                  </div>
+                </div>
+
+                <div style="margin: 18px 24px 0 24px; display: flex; gap: 10px;">
+                  <div style="flex: 1; height: 52px; border-radius: 14px; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">+ Ny brygning</div>
+                  <div style="flex: 1; height: 52px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E7DFD0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">Tilføj måling</div>
+                </div>
+
+                <div style="margin-top: auto; border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">HJEM</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">BRYG</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">LAGER</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">SALG</span></div>
+                </div>
+              </div>
+            </x-import>
+          </div>
+
+          <!-- ── Skærm 2 · Brygninger ── -->
+          <div data-screen-label="Brygninger" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">02 · Brygninger</div>
+            <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+              <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+                <div style="padding: 0 24px; font: 400 34px/1.3 'Lora', serif;">Brygninger</div>
+
+                <div style="margin: 18px 24px 0 24px; display: flex; background: #F0EADF; border-radius: 999px; padding: 4px;">
+                  <div style="flex: 1; height: 38px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 4px rgba(33,27,18,0.08); display: flex; align-items: center; justify-content: center; font: 600 13px/1 'Instrument Sans', sans-serif;">Aktive</div>
+                  <div style="flex: 1; height: 38px; display: flex; align-items: center; justify-content: center; font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">Planlagte</div>
+                  <div style="flex: 1; height: 38px; display: flex; align-items: center; justify-content: center; font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">Arkiv</div>
+                </div>
+
+                <div style="margin: 18px 24px 0 24px; display: flex; flex-direction: column; gap: 10px;">
+                  <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; gap: 16px; align-items: center;">
+                    <div style="width: 46px; height: 46px; border-radius: 50%; background: #D08C2E; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                      <span style="font: 400 21px/1.35 'Lora', serif;">Nr. 24 · Enghave IPA</span>
+                      <span style="font-size: 13px; color: #8B8070;">West coast IPA · 6,2 % · 500 L</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F); border: 1px solid var(--accent, #A85B1F); border-radius: 999px; padding: 5px 10px; flex-shrink: 0;">GÆRING</span>
+                  </div>
+                  <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; gap: 16px; align-items: center;">
+                    <div style="width: 46px; height: 46px; border-radius: 50%; background: #2E2013; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                      <span style="font: 400 21px/1.35 'Lora', serif;">Nr. 23 · Havre Stout</span>
+                      <span style="font-size: 13px; color: #8B8070;">Oatmeal stout · 5,4 % · 500 L</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741; border: 1px solid #4A6741; border-radius: 999px; padding: 5px 10px; flex-shrink: 0;">LAGRING</span>
+                  </div>
+                  <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; gap: 16px; align-items: center;">
+                    <div style="width: 46px; height: 46px; border-radius: 50%; background: #E8C36A; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                      <span style="font: 400 21px/1.35 'Lora', serif;">Nr. 25 · Sommerpilsner</span>
+                      <span style="font-size: 13px; color: #8B8070;">Tjekkisk pilsner · 4,8 % · 1.000 L</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #8B8070; border: 1px dashed #C9BFAD; border-radius: 999px; padding: 5px 10px; flex-shrink: 0;">PLANLAGT</span>
+                  </div>
+                  <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 18px 20px; display: flex; gap: 16px; align-items: center;">
+                    <div style="width: 46px; height: 46px; border-radius: 50%; background: #B4622D; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                      <span style="font: 400 21px/1.35 'Lora', serif;">Nr. 22 · Rød Ale</span>
+                      <span style="font-size: 13px; color: #8B8070;">Irish red · 5,0 % · 500 L</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #FBF7F0; background: #4A6741; border: 1px solid #4A6741; border-radius: 999px; padding: 5px 10px; flex-shrink: 0;">KLAR</span>
+                  </div>
+                </div>
+
+                <div style="margin: 18px 24px 0 24px; height: 52px; border-radius: 14px; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">+ Ny brygning fra opskrift</div>
+
+                <div style="margin-top: auto; border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">HJEM</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">BRYG</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">LAGER</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">SALG</span></div>
+                </div>
+              </div>
+            </x-import>
+          </div>
+
+          <!-- ── Skærm 3 · Gæringslog ── -->
+          <div data-screen-label="Gæringslog" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">03 · Gæringslog</div>
+            <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+              <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+                <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+                  <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">← Brygninger</div>
+                  <div style="display: flex; align-items: baseline; gap: 12px;">
+                    <span style="font: 400 34px/1.3 'Lora', serif;">Nr. 24 · Enghave IPA</span>
+                  </div>
+                  <div style="display: flex; gap: 8px; margin-top: 4px;">
+                    <span style="font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F); border: 1px solid var(--accent, #A85B1F); border-radius: 999px; padding: 5px 10px; white-space: nowrap; flex-shrink: 0;">GÆRING · DAG 5</span>
+                    <span style="font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #8B8070; border: 1px solid #E7DFD0; border-radius: 999px; padding: 5px 10px;">TANK 2 · 500 L</span>
+                  </div>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 20px;">
+                  <div style="display: flex; align-items: baseline;">
+                    <span style="font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">MASSEFYLDE (SG)</span>
+                    <span style="margin-left: auto; font: 400 24px/1 'Lora', serif; color: var(--accent, #A85B1F);">1,018</span>
+                  </div>
+                  <svg width="100%" height="120" viewBox="0 0 314 120" style="margin-top: 14px; display: block;">
+                    <line x1="0" y1="20" x2="314" y2="20" stroke="#F0EADF" stroke-width="1"></line>
+                    <line x1="0" y1="60" x2="314" y2="60" stroke="#F0EADF" stroke-width="1"></line>
+                    <line x1="0" y1="100" x2="314" y2="100" stroke="#F0EADF" stroke-width="1"></line>
+                    <polyline points="10,14 70,26 130,52 190,78 250,92 304,98" fill="none" stroke="#A85B1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                    <circle cx="10" cy="14" r="4" fill="#FBF7F0" stroke="#A85B1F" stroke-width="2"></circle>
+                    <circle cx="70" cy="26" r="4" fill="#FBF7F0" stroke="#A85B1F" stroke-width="2"></circle>
+                    <circle cx="130" cy="52" r="4" fill="#FBF7F0" stroke="#A85B1F" stroke-width="2"></circle>
+                    <circle cx="190" cy="78" r="4" fill="#FBF7F0" stroke="#A85B1F" stroke-width="2"></circle>
+                    <circle cx="250" cy="92" r="4" fill="#FBF7F0" stroke="#A85B1F" stroke-width="2"></circle>
+                    <circle cx="304" cy="98" r="5" fill="#A85B1F"></circle>
+                  </svg>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: #8B8070; margin-top: 8px;"><span>4. jul · 1,062</span><span>Mål: 1,012</span></div>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">SENESTE MÅLINGER</div>
+                <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                    <span style="font-size: 14px; color: #8B8070; min-width: 64px;">I dag 08:10</span>
+                    <span style="font-size: 15px; font-weight: 600;">SG 1,018 · 19,5 °C</span>
+                    <span style="margin-left: auto; font-size: 13px; color: #4A6741;">Stabil</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 52px; border-bottom: 1px solid #F0EADF;">
+                    <span style="font-size: 14px; color: #8B8070; min-width: 64px;">I går 08:05</span>
+                    <span style="font-size: 15px; font-weight: 600;">SG 1,024 · 19,8 °C</span>
+                    <span style="margin-left: auto; font-size: 13px; color: #8B8070;">Falder</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 52px;">
+                    <span style="font-size: 14px; color: #8B8070; min-width: 64px;">6. jul 08:15</span>
+                    <span style="font-size: 15px; font-weight: 600;">SG 1,034 · 20,1 °C</span>
+                    <span style="margin-left: auto; font-size: 13px; color: #8B8070;">Falder</span>
+                  </div>
+                </div>
+
+                <div style="margin: 18px 24px 0 24px; height: 52px; border-radius: 14px; background: var(--accent, #A85B1F); color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">+ Tilføj måling</div>
+
+                <div style="margin-top: auto; border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">HJEM</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">BRYG</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">LAGER</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">SALG</span></div>
+                </div>
+              </div>
+            </x-import>
+          </div>
+
+          <!-- ── Skærm 4 · Lager ── -->
+          <div data-screen-label="Lager" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">04 · Lager</div>
+            <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+              <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+                <div style="padding: 0 24px; display: flex; align-items: baseline;">
+                  <span style="font: 400 34px/1.3 'Lora', serif;">Lager</span>
+                  <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #C98A2C; border: 1px solid #C98A2C; border-radius: 999px; padding: 5px 10px;">2 VARER LAVT</span>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">MALT</div>
+                <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-size: 15px; font-weight: 600;">Pilsnermalt</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">120 kg</span></div>
+                    <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 72%; height: 4px; border-radius: 999px; background: #4A6741;"></div></div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-size: 15px; font-weight: 600;">Münchenermalt</span><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #C98A2C;">LAVT</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">18 kg</span></div>
+                    <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 12%; height: 4px; border-radius: 999px; background: #C98A2C;"></div></div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-size: 15px; font-weight: 600;">Havreflager</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">45 kg</span></div>
+                    <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 48%; height: 4px; border-radius: 999px; background: #4A6741;"></div></div>
+                  </div>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">HUMLE</div>
+                <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 1px solid #F0EADF;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-size: 15px; font-weight: 600;">Citra</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">2,4 kg</span></div>
+                    <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 60%; height: 4px; border-radius: 999px; background: #4A6741;"></div></div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-size: 15px; font-weight: 600;">Saaz</span><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #C98A2C;">LAVT</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">0,3 kg</span></div>
+                    <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 8%; height: 4px; border-radius: 999px; background: #C98A2C;"></div></div>
+                  </div>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">GÆR</div>
+                <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 0;">
+                    <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-size: 15px; font-weight: 600;">US-05 · tørgær</span><span style="margin-left: auto; font-size: 14px; color: #8B8070;">14 breve</span></div>
+                    <div style="height: 4px; border-radius: 999px; background: #F0EADF;"><div style="width: 82%; height: 4px; border-radius: 999px; background: #4A6741;"></div></div>
+                  </div>
+                </div>
+
+                <div style="margin: 18px 24px 0 24px; height: 52px; border-radius: 14px; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font: 600 15px/1 'Instrument Sans', sans-serif;">Opret indkøbsliste · 2 varer</div>
+
+                <div style="margin-top: auto; border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">HJEM</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">BRYG</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">LAGER</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">SALG</span></div>
+                </div>
+              </div>
+            </x-import>
+          </div>
+
+          <!-- ── Skærm 5 · Salg & taproom ── -->
+          <div data-screen-label="Salg og taproom" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">05 · Salg &amp; taproom</div>
+            <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+              <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+                <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 4px;">
+                  <div style="font: 400 34px/1.3 'Lora', serif;">Salg</div>
+                  <div style="display: flex; align-items: baseline; gap: 8px;">
+                    <span style="font: 400 30px/1 'Lora', serif; color: var(--accent, #A85B1F);">2.140 kr</span>
+                    <span style="font-size: 13px; color: #8B8070;">i dag · 9 bestillinger</span>
+                  </div>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">TIL AFHENTNING I DAG</div>
+                <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 4px 20px;">
+                  <div style="display: flex; align-items: center; gap: 12px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                    <div style="display: flex; flex-direction: column; gap: 3px;">
+                      <span style="font-size: 15px; font-weight: 600;">Mette K.</span>
+                      <span style="font-size: 13px; color: #8B8070;">6 × Enghave IPA · 1 × gavekort</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F);">KL. 16:00</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 12px; min-height: 58px; border-bottom: 1px solid #F0EADF;">
+                    <div style="display: flex; flex-direction: column; gap: 3px;">
+                      <span style="font-size: 15px; font-weight: 600;">Café Vestervang</span>
+                      <span style="font-size: 13px; color: #8B8070;">2 fustager · Havre Stout</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: var(--accent, #A85B1F);">KL. 17:30</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 12px; min-height: 58px;">
+                    <div style="display: flex; flex-direction: column; gap: 3px;">
+                      <span style="font-size: 15px; font-weight: 600;">Jonas B.</span>
+                      <span style="font-size: 13px; color: #8B8070;">12 × blandet kasse</span>
+                    </div>
+                    <span style="margin-left: auto; font: 600 11px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #4A6741;">AFHENTET</span>
+                  </div>
+                </div>
+
+                <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">TAPROOM &amp; EVENTS</div>
+                <div style="margin: 10px 24px 0 24px; background: #211B12; color: #FBF7F0; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: flex; align-items: baseline;">
+                    <span style="font: 400 22px/1.35 'Lora', serif;">Fredagsbar · smagning af Nr. 23</span>
+                  </div>
+                  <div style="font-size: 13px; color: #B8AE9D;">Fredag 11. juli · 16–22 · taproom</div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-top: 4px;">
+                    <span style="font: 400 24px/1 'Lora', serif; color: #E8C36A;">18</span>
+                    <span style="font-size: 13px; color: #B8AE9D;">tilmeldte · 32 pladser</span>
+                    <span style="margin-left: auto; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #211B12; background: #E8C36A; border-radius: 999px; padding: 8px 14px;">REDIGÉR</span>
+                  </div>
+                </div>
+                <div style="margin: 10px 24px 0 24px; background: #FFFFFF; border: 1px dashed #C9BFAD; border-radius: 18px; min-height: 52px; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'Instrument Sans', sans-serif; color: #8B8070;">+ Nyt event</div>
+
+                <div style="margin-top: auto; border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">HJEM</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">BRYG</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">LAGER</span></div>
+                  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">SALG</span></div>
+                </div>
+              </div>
+            </x-import>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════ KUNDENS APP ══════════════ -->
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2.4px; color: #8B8070;">KUNDENS APP</div>
+        <div data-screen-label="Kunde - bestil" style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="font: 500 13px/1 'Instrument Sans', sans-serif; color: #8B8070;">06 · Bestil øl</div>
+          <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+            <div style="min-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FBF7F0; font-family: 'Instrument Sans', sans-serif; color: #211B12; padding-top: 72px;">
+              <div style="padding: 0 24px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="font: 500 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">MIT MIKROBRYGGERI</div>
+                <div style="font: 400 34px/1.3 'Lora', serif;">Bryghuset Enghave</div>
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: #4A6741;"></span>
+                  <span style="color: #4A6741; font-weight: 600;">Åbent</span>
+                  <span style="color: #8B8070;">· taproom til 22 · Enghavevej 41, Kbh SV</span>
+                </div>
+              </div>
+
+              <div style="margin: 20px 24px 0 24px; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 2px; color: #8B8070;">PÅ HANEN &amp; I KØLEREN</div>
+              <div style="margin: 10px 24px 0 24px; display: flex; flex-direction: column; gap: 10px;">
+                <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; display: flex; gap: 14px; align-items: center;">
+                  <div style="width: 44px; height: 44px; border-radius: 50%; background: #D08C2E; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                  <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                    <span style="font: 400 20px/1.35 'Lora', serif;">Enghave IPA</span>
+                    <span style="font-size: 13px; color: #8B8070;">West coast IPA · 6,2 % · 44 kr</span>
+                  </div>
+                  <div style="margin-left: auto; width: 44px; height: 44px; border-radius: 50%; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">+</div>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; display: flex; gap: 14px; align-items: center;">
+                  <div style="width: 44px; height: 44px; border-radius: 50%; background: #2E2013; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                  <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                    <span style="font: 400 20px/1.35 'Lora', serif;">Havre Stout</span>
+                    <span style="font-size: 13px; color: #8B8070;">Oatmeal stout · 5,4 % · 46 kr</span>
+                  </div>
+                  <div style="margin-left: auto; width: 44px; height: 44px; border-radius: 50%; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">+</div>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E7DFD0; border-radius: 18px; padding: 16px 18px; display: flex; gap: 14px; align-items: center;">
+                  <div style="width: 44px; height: 44px; border-radius: 50%; background: #B4622D; border: 3px solid #FBF7F0; box-shadow: 0 0 0 1px #E7DFD0; flex-shrink: 0;"></div>
+                  <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0;">
+                    <span style="font: 400 20px/1.35 'Lora', serif;">Rød Ale</span>
+                    <span style="font-size: 13px; color: #8B8070;">Irish red · 5,0 % · 42 kr</span>
+                  </div>
+                  <div style="margin-left: auto; width: 44px; height: 44px; border-radius: 50%; background: #211B12; color: #FBF7F0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">+</div>
+                </div>
+              </div>
+
+              <div style="margin: 16px 24px 0 24px; background: #211B12; color: #FBF7F0; border-radius: 18px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="font: 400 19px/1.35 'Lora', serif;">Fredagsbar · smagning af Havre Stout</div>
+                <div style="display: flex; align-items: baseline; gap: 10px;">
+                  <span style="font-size: 13px; color: #B8AE9D;">Fredag 11. juli · 16–22 · gratis</span>
+                  <span style="margin-left: auto; font: 600 12px/1 'Instrument Sans', sans-serif; letter-spacing: 1px; color: #211B12; background: #E8C36A; border-radius: 999px; padding: 8px 14px;">TILMELD</span>
+                </div>
+              </div>
+
+              <div style="margin: 18px 24px 0 24px; height: 54px; border-radius: 14px; background: var(--accent, #A85B1F); color: #FBF7F0; display: flex; align-items: center; padding: 0 20px; font: 600 15px/1 'Instrument Sans', sans-serif;">
+                <span>Se kurv · 2 varer</span>
+                <span style="margin-left: auto;">90 kr</span>
+              </div>
+
+              <div style="margin-top: auto; border-top: 1px solid #E7DFD0; background: #FBF7F0; display: flex; padding: 14px 10px 34px 10px;">
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #A85B1F);"></div><span style="font: 700 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #211B12;">ØL</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">EVENTS</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">BESTILLINGER</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px;"><div style="width: 5px; height: 5px; border-radius: 50%; background: transparent;"></div><span style="font: 600 10px/1 'Instrument Sans', sans-serif; letter-spacing: 1.6px; color: #8B8070;">PROFIL</span></div>
+              </div>
+            </div>
+          </x-import>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#A85B1F&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#A85B1F&quot;, &quot;#4A6741&quot;, &quot;#2C4E6B&quot;], &quot;section&quot;: &quot;Udseende&quot;}}"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* ============================================================
+   TALVÆRKSTEDET — Design Tokens (colors + type)
+   "Talværkstedet" (the Number Workshop) ⚙️
+   A Danish math game for children ~8–9 (0.–3. klasse).
+
+   Narrative: the child repairs a little robot's machine by
+   solving math; correct answers earn ⭐ stars that unlock
+   minigames and repair the machine's 5 gears.
+
+   Tokens below mirror the product's source CSS custom properties
+   (style.css :root), re-expressed with semantic aliases as
+   recommended in the design-system notes.
+
+   FONT NOTE: the product source uses a system stack
+   ('Segoe UI', 'Arial Rounded MT Bold', Arial). For a more
+   playful, consistently-rounded feel we host a webfont pair:
+   Baloo 2 (display / numbers / buttons) + Nunito (body / UI).
+   Both fully support Danish æ ø å. Flagged substitution — swap
+   for brand fonts if/when they exist.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap');
+
+:root {
+  /* ---------- FONT ---------- */
+  --font-base: 'Nunito', 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif;       /* body / UI */
+  --font-display: 'Baloo 2', 'Nunito', 'Segoe UI', Arial, sans-serif;                  /* headings, numbers, buttons */
+
+  /* ============================================================
+     RAW BRAND COLORS  (verbatim from product :root)
+     ============================================================ */
+  --blue:       #4A90E2;   /* primary: action, nav, titles, active tabs */
+  --blue-dark:  #2D6DB8;   /* hover/active on blue */
+  --green:      #5CB85C;   /* success, confirm, "rigtigt" */
+  --green-dark: #3F8F3F;   /* hover on green */
+  --yellow:     #F5A623;   /* stars, "prøv igen" feedback, highlight */
+  --orange:     #E8661A;   /* wrong answer (soft), ones / enere */
+  --pink:       #E91E8C;   /* accent (sparse) */
+  --purple:     #7B61FF;   /* active choice, thousands, current totals */
+  --red:        #E74C3C;   /* reserved warning (rare) */
+
+  --bg:         #FFF8EC;   /* page background — warm cream */
+  --card-bg:    #FFFFFF;   /* cards, panels, buttons */
+  --text:       #2C2C2C;   /* primary text */
+  --text-light: #777777;   /* secondary / help text */
+  --border:     #E0D5C5;   /* edges, dividers, tracks */
+
+  /* ============================================================
+     SEMANTIC ALIASES  (recommended in DS notes — prefer these)
+     ============================================================ */
+  --color-primary:        var(--blue);
+  --color-primary-dark:   var(--blue-dark);
+  --color-success:        var(--green);
+  --color-success-dark:   var(--green-dark);
+  --color-star:           var(--yellow);   /* stars + highlight */
+  --color-tryagain:       var(--yellow);   /* gentle "try again" */
+  --color-wrong:          var(--orange);   /* soft wrong, never red */
+  --color-active:         var(--purple);   /* selected / active choice */
+  --color-accent:         var(--pink);
+  --color-warning:        var(--red);
+
+  /* Place-value color coding — reused across "Byg tal" & "Plads-regn" */
+  --pv-thousands: var(--purple);
+  --pv-hundreds:  var(--green);
+  --pv-tens:      var(--blue);
+  --pv-ones:      var(--orange);
+
+  /* ============================================================
+     SHAPE & ELEVATION  (verbatim)
+     ============================================================ */
+  --shadow:     0 4px 18px rgba(0, 0, 0, 0.10);   /* standard card shadow */
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius:     20px;    /* large cards / panels */
+  --radius-sm:  12px;    /* buttons, smaller fields */
+  --radius-pill: 999px;  /* chips / pills */
+  /* circular elements use border-radius: 50% */
+
+  /* ============================================================
+     SPACING
+     Product uses gaps of 8–14px and a 680px content container.
+     A formal 4/8 scale is introduced here per DS recommendation.
+     ============================================================ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;   /* common component gap */
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --container: 680px;       /* centered content max-width */
+  --container-pad: 14px;    /* side padding */
+  --bp-mobile: 480px;       /* mobile breakpoint */
+
+  /* ============================================================
+     MOTION  (short, playful easings — see README motion library)
+     ============================================================ */
+  --dur-fast:   0.12s;
+  --dur-base:   0.25s;
+  --dur-slow:   0.45s;
+  --ease:       ease;
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   TYPOGRAPHY — semantic element + utility styles
+   Root = 16px. Rem scale mirrors the product.
+   ============================================================ */
+
+body {
+  font-family: var(--font-base);
+  color: var(--text);
+  background: var(--bg);
+  font-size: 1rem;          /* 16px */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Equations & big numbers — the product's hero */
+.t-equation {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3rem;          /* 48px (2–3rem range) */
+  line-height: 1.05;
+  letter-spacing: 2px;      /* separate the digits */
+}
+
+/* Page / section title (blue) */
+h1, .t-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Name / celebration title */
+.t-celebrate {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Task instruction */
+h2, .t-instruction {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Body / feedback */
+p, .t-body {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Help text / labels */
+.t-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-light);
+}
+
+/* Button label */
+.t-button {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 480px) {
+  h1, .t-title { font-size: 1.2rem; }
+  .t-instruction { font-size: 1.05rem; }
+  .t-equation { font-size: 2.2rem; }
+}
