@@ -1,0 +1,21 @@
+/* Design-tokens — kilde til sandhed spejlet i src/app/globals.css (CLAUDE.md §9).
+   Hold disse to filer synkrone. */
+:root {
+  --baggrund: #fbf7f0;
+  --flade: #ffffff;
+  --kant: #e7dfd0;
+  --kant-svag: #f0eadf;
+  --tekst: #211b12;
+  --tekst-daempet: #8b8070;
+  --tekst-blod: #5c5343;
+  --accent: #a85b1f;   /* kobber — primær */
+  --succes: #4a6741;   /* humlegrøn */
+  --advarsel: #c98a2c;
+  --fremhaev: #e8c36a;
+  --moerk-flade: #211b12;
+  --moerk-tekst: #fbf7f0;
+  --moerk-daempet: #b8ae9d;
+}
+/* Accent-varianter (Tweaks) */
+[data-accent="humle"]   { --accent: #4a6741; }
+[data-accent="dybblaa"] { --accent: #2c4e6b; }
