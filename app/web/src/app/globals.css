@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Designsystem — Mit Mikrobryggeri
+   Kilde: CLAUDE.md §9. Stilrent, minimalistisk, håndværker-varmt.
+   Ingen Talværkstedet-styling. Aldrig condensed fonte.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Farver */
+    --baggrund: #fbf7f0; /* varm papir */
+    --flade: #ffffff;
+    --kant: #e7dfd0;
+    --kant-svag: #f0eadf;
+    --tekst: #211b12;
+    --tekst-daempet: #8b8070;
+    --tekst-blod: #5c5343; /* brødtekst på kort */
+
+    --accent: #a85b1f; /* kobber — primær */
+    --succes: #4a6741; /* humlegrøn */
+    --advarsel: #c98a2c;
+    --fremhaev: #e8c36a;
+
+    /* Mørk flade */
+    --moerk-flade: #211b12;
+    --moerk-tekst: #fbf7f0;
+    --moerk-daempet: #b8ae9d;
+
+    /* Lærred bag telefonrammerne (design-canvas) */
+    --laerred: #efe9de;
+  }
+
+  /* Accent-varianter (Tweaks: kobber / humlegrøn / dybblå) */
+  [data-accent="humle"] {
+    --accent: #4a6741;
+  }
+  [data-accent="dybblaa"] {
+    --accent: #2c4e6b;
+  }
+
+  html,
+  body {
+    background: var(--baggrund);
+    color: var(--tekst);
+    font-family: var(--font-instrument), "Instrument Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Links, der indpakker kort/rækker til navigation, må aldrig omfarve
+     indholdet. Rigtige tekst-links styles eksplicit (fx galleri-billedtekster). */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  /* Kort — flade med 1px kant, radius 18px, ingen tunge skygger */
+  .kort {
+    background: var(--flade);
+    border: 1px solid var(--kant);
+    border-radius: 18px;
+  }
+  .kort-stiplet {
+    background: var(--flade);
+    border: 1px dashed #c9bfad;
+    border-radius: 18px;
+  }
+  .kort-moerk {
+    background: var(--moerk-flade);
+    color: var(--moerk-tekst);
+    border-radius: 18px;
+  }
+
+  /* Løftede lag (bottom sheets) må få en blød skygge */
+  .loeft {
+    box-shadow: 0 8px 24px rgba(33, 27, 18, 0.1);
+  }
+
+  /* Knapper — hit target ≥ 44px */
+  .btn {
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+  }
+  .btn-primary {
+    background: var(--moerk-flade);
+    color: var(--moerk-tekst);
+  }
+  .btn-accent {
+    background: var(--accent);
+    color: var(--moerk-tekst);
+  }
+  .btn-sekundaer {
+    background: var(--flade);
+    border: 1px solid var(--kant);
+    color: var(--tekst);
+  }
+  .btn-fremhaev {
+    background: var(--fremhaev);
+    color: var(--moerk-flade);
+  }
+  .btn-omrids {
+    background: var(--flade);
+    border: 1px solid var(--moerk-flade);
+    color: var(--tekst);
+  }
+
+  /* Etiketter — 10–12px uppercase, letter-spacing 1–2.4px, vægt 600 */
+  .label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--tekst-daempet);
+  }
+
+  /* Status-piller — 999px, uppercase */
+  .pille {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 1px;
+    border-radius: 999px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pille-accent {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  .pille-succes {
+    color: var(--succes);
+    border: 1px solid var(--succes);
+  }
+  .pille-succes-fyldt {
+    color: var(--moerk-tekst);
+    background: var(--succes);
+    border: 1px solid var(--succes);
+  }
+  .pille-advarsel {
+    color: var(--advarsel);
+    border: 1px solid var(--advarsel);
+  }
+  .pille-neutral {
+    color: var(--tekst);
+    border: 1px solid var(--kant);
+  }
+  .pille-tom {
+    color: var(--tekst-daempet);
+    border: 1px dashed #c9bfad;
+  }
+  .pille-moerk {
+    color: var(--moerk-tekst);
+    background: var(--moerk-flade);
+  }
+  .pille-fremhaev {
+    color: var(--moerk-flade);
+    background: var(--fremhaev);
+  }
+
+  /* Formularinput */
+  .form-input {
+    height: 46px;
+    background: var(--flade);
+    border: 1px solid var(--kant);
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    font-size: 15px;
+    color: var(--tekst-daempet);
+  }
+
+  /* Toggle — 46×28, knop 22px */
+  .toggle {
+    width: 46px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--kant);
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+  .toggle .knop {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--flade);
+  }
+  .toggle--on {
+    background: var(--accent);
+    justify-content: flex-end;
+  }
+  .toggle--on .knop {
+    background: var(--moerk-tekst);
+  }
+
+  /* Segment-kontrol (Uge / Måned / År, Aktive / Planlagte / Arkiv) */
+  .segment {
+    display: flex;
+    background: var(--kant-svag);
+    border-radius: 999px;
+    padding: 4px;
+  }
+  .segment-val {
+    flex: 1;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--tekst-daempet);
+    border-radius: 999px;
+  }
+  .segment-val--aktiv {
+    background: var(--flade);
+    color: var(--tekst);
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(33, 27, 18, 0.08);
+  }
+
+  /* Fremdriftsbjælke */
+  .bjaelke {
+    height: 4px;
+    border-radius: 999px;
+    background: var(--kant-svag);
+    overflow: hidden;
+  }
+  .bjaelke > span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+}
